@@ -6,4 +6,5 @@
 
 <style lang="scss">
 @import './assets/css/normalize.css';
+@import './assets/css/main.css';
 </style>

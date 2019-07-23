@@ -1,59 +1,81 @@
 <template>
-  <header>
+  <header class="header">
     <h1>
       <a href="/">霜降之原</a>
     </h1>
-    <nav>
+    <p class="description">做一个快乐的死肥宅</p>
+    <nav class="nav">
       <ul>
-        <li>技术</li>
-        <li>生活</li>
-        <li>游戏</li>
+        <li :class="{'selected' : curTab === 0}" v-on:click="tabClick(0)">首页</li>
+        <li :class="{'selected' : curTab === 1}" v-on:click="tabClick(1)">技术</li>
+        <li :class="{'selected' : curTab === 2}" v-on:click="tabClick(2)">生活</li>
       </ul>
     </nav>
+    <!-- <div class="clear"></div> -->
   </header>
 </template>
 
+<script>
+export default {
+  name: 'navHeader',
+  data() {
+    return {
+      curTab: 0
+    };
+  },
+  methods: {
+    tabClick(tab) {
+      this.curTab = tab;
+    }
+  }
+};
+</script>
+
 <style lang="scss" scoped>
+header::after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
 header {
-  display: flex;
-  flex-direction: row;
-  height: 56px;
-  width: 100vw;
-  align-items: center;
-  border-bottom: 1px solid #eeeeee;
-  position: fixed;
-  background-color: white;
+  width: 80vw;
+  margin: 5vw auto 0 auto;
+  border-bottom: 1px solid #ddd;
 
   h1 {
     font-weight: 600;
     font-size: 2.4vw;
-    padding: 0 2vw;
     color: #333333;
-    letter-spacing: 0.5vw;
+    margin: 0;
   }
 
-  ul {
-    height: 100%;
-    border-left: 1px solid #eeeeee;
-    display: flex;
-    align-items: center;
+  .description {
+    color: #666666;
+    font-size: 1.2vw;
+    margin-top: 1vw;
+  }
 
-    li {
-      list-style-type: none;
-      float: left;
-      padding: 0 2vw;
-      font-size: 1.6vw;
-      color: #666666;
-    }
+  .nav {
+    float: right;
+  }
 
-    :not(:nth-last-child(1)) {
-      border-right: 1px solid #eeeeee;
-    }
+  li {
+    list-style-type: none;
+    float: left;
+    width: 8vw;
+    font-size: 1.2vw;
+    padding: 1vw;
+    text-align: center;
+    color: #333;
+    border: none;
+  }
+
+  .selected {
+    border: 1px solid #ddd;
+    border-bottom-color: white;
   }
 }
 </style>
-<script>
-export default {
-  name: 'navHeader'
-}
-</script>

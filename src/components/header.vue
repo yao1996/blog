@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <h1>
-      <a href="/">霜降之原</a>
+      <a href="/">霜降</a>
     </h1>
     <p class="description">做一个快乐的死肥宅</p>
     <nav class="nav">
@@ -41,21 +41,20 @@ header::after {
 }
 
 header {
-  width: 80vw;
-  margin: 5vw auto 0 auto;
+  margin: 4vw auto 0 auto;
   border-bottom: 1px solid #ddd;
 
   h1 {
     font-weight: 600;
-    font-size: 2.4vw;
+    font-size: 38px;
     color: #333333;
     margin: 0;
   }
 
   .description {
     color: #666666;
-    font-size: 1.2vw;
-    margin-top: 1vw;
+    font-size: 14px;
+    margin-top: 4px;
   }
 
   .nav {
@@ -65,12 +64,12 @@ header {
   li {
     list-style-type: none;
     float: left;
-    width: 8vw;
-    font-size: 1.2vw;
-    padding: 1vw;
+    font-size: 12px;
+    width: 80px;
+    padding: 10px 0 8px 0;
     text-align: center;
     color: #333;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0);
   }
 
   .selected {
